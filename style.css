@@ -1,0 +1,128 @@
+/*Start of keyboard styles*/
+
+#keyboard{
+
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(13, 92, 92);
+    left: 0;
+    padding: 40px;
+    overflow: auto;
+    text-align: center;
+    border-top: 3px solid black;
+    animation-name: toTop;
+    animation-duration: .4s;
+    transition: .4s;
+    z-index: 1;
+
+}
+
+@keyframes toTop{
+    from{bottom: -300px;}
+    to{bottom: 0;}
+}
+
+#keyboard .key{
+    color:#fff;
+    background-color: rgb(0,0,0);
+    background-color: rgba(255,255,255, 0.4);
+    place-items:center;
+    font-size: 36px;
+    font-family: Poppins, sans-serif;
+    font-weight: lighter;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+#keyboard .key:active{
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.key.space{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#keyboard .key.done{
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+#keyboard .key.unshift{
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.hide{
+    display: none;
+}
+
+.pkey{
+    position: absolute;
+    top: 110px;
+    right: 405px;
+}
+
+.move{
+    position: relative;
+    left: -40px;
+}
+
+/*End of keyboard styles*/
+
+
+
+body{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    background-color: rgb(155, 124, 57);
+}
+
+#container{
+    text-align: center;
+    margin-top: 150px;
+    background-color: white;
+    padding: 40px;
+    border-radius:25px ;
+}
+
+#instruct, #message{
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#userName{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    border: 2px solid black;
+    border-radius: 25px;
+    text-align: center;
+}
+
+#enter{
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    transition: .2s ease;
+    background-color: gray;
+    cursor: pointer;
+
+}
+
+#enter:hover{
+    color: white;
+}
+

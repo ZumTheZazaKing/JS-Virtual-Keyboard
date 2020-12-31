@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script defer src="button.js"></script>
+    <title>Virtual Keyboard</title>
+</head>
+<body>
+
+    <div id="container">
+        <p id="instruct">Enter Name:</p>
+        <textarea id="userName" cols="40" rows="2" onclick="showKeyboard()"></textarea><br><br>
+        <button id="enter" onclick="showMessage()">Enter</button>
+        <p id="message"></p>
+    </div>
+
+    <!--Start of keyboard code-->
+
+    <div id="keyboard">
+
+        <span class="key" onclick="document.getElementById('userName').value += '1'">1</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '2'">2</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '3'">3</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '4'">4</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '5'">5</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '6'">6</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '7'">7</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '8'">8</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '9'">9</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '0'">0</span>&nbsp;&nbsp;
+        <span class="key" onclick="backspace()">⌫</span><br><br><br>
+        <span class="key lower" onclick="document.getElementById('userName').value += 'q'">q</span>&nbsp;
+        <span class="key upper hide move" onclick="document.getElementById('userName').value += 'Q'">Q</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'w'">w</span>&nbsp;
+        <span class="key upper hide move" onclick="document.getElementById('userName').value += 'W'">W</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'e'">e</span>&nbsp;
+        <span class="key upper hide move" onclick="document.getElementById('userName').value += 'E'">E</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'r'">r</span>&nbsp;
+        <span class="key upper hide move" onclick="document.getElementById('userName').value += 'R'">R</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 't'">t</span>&nbsp;
+        <span class="key upper hide move" onclick="document.getElementById('userName').value += 'T'">T</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'y'">y</span>&nbsp;
+        <span class="key upper hide move" onclick="document.getElementById('userName').value += 'Y'">Y</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'u'">u</span>&nbsp;
+        <span class="key upper hide move" onclick="document.getElementById('userName').value += 'U'">U</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'i'">i</span>&nbsp;
+        <span class="key upper hide move" onclick="document.getElementById('userName').value += 'I'">I</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'o'">o</span>&nbsp;
+        <span class="key upper hide move" onclick="document.getElementById('userName').value += 'O'">O</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'p'">p</span><br><br><br>
+        <span class="key upper pkey hide " onclick="document.getElementById('userName').value += 'P'">P</span>
+        
+        <span class="key shift" onclick="shift()">⇧</span>&nbsp;
+        <span class="key unshift hide" onclick="unshift()">⇧</span>&nbsp;
+
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'a'">a</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'A'">A</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 's'">s</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'S'">S</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'd'">d</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'D'">D</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'f'">f</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'F'">F</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'g'">g</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'G'">G</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'h'">h</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'H'">H</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'j'">j</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'J'">J</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'k'">k</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'K'">K</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'l'">l</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'L'">L</span>&nbsp;
+
+        <span class="key" onclick="document.getElementById('userName').value += '\n'">⏎ </span><br><br><br>
+
+        <span class="key done" onclick="hideKeyboard()">Done</span>&nbsp;&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'z'">z</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'Z'">Z</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'x'">x</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'X'">X</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'c'">c</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'C'">C</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'v'">v</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'V'">V</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'b'">b</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'B'">B</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'n'">n</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'N'">N</span>&nbsp;
+
+        <span class="key lower" onclick="document.getElementById('userName').value += 'm'">m</span>&nbsp;
+        <span class="key upper hide" onclick="document.getElementById('userName').value += 'M'">M</span>&nbsp;
+
+        <span class="key" onclick="document.getElementById('userName').value += ','">,</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '.'">.</span>&nbsp;&nbsp;
+        <span class="key" onclick="document.getElementById('userName').value += '?'">?</span><br><br><br>
+        <div class="key space" onclick="document.getElementById('userName').value += ' '">␣</div>
+        
+
+
+    </div>
+
+    <!--End of keyboard code-->
+    
+</body>
+</html>
